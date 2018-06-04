@@ -13,12 +13,19 @@
 
 Route::get('/', function () {
     return view('welcome');
+
 });
 
 Route::resource('absen','AbsenController');
 Route::resource('siswa','SiswaController');
 Route::resource('kelas','KelasController');
 
+Route::get('/cek',function(){
+	return view('layouts.admin');
+});
+
+
+ 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
